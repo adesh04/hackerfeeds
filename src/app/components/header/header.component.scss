@@ -1,0 +1,57 @@
+@import '~@angular/material/theming';
+
+:host {
+  left: 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 101;
+}
+
+.container {
+  align-items: center;
+  color: rgba(#fff, 0.7);
+  display: flex;
+}
+
+.logo {
+  margin-right: 14px;
+
+  img {
+    display: block;
+    width: 24px;
+  }
+}
+
+a {
+  color: inherit;
+  font-weight: normal;
+
+  &.active {
+    color: #fff;
+  }
+}
+
+.made-by {
+  margin-left: auto;
+}
+
+@media(max-width: 599px) {
+
+  .made-by {
+    display: none;
+  }
+}
+
+@media(max-width: 399px) {
+
+  .logo {
+    margin-right: 7px;
+  }
+
+  .mat-button {
+    padding: 0 8px;
+    line-height: 32px;
+    min-width: 0;
+  }
+}

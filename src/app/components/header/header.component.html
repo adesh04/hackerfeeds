@@ -1,0 +1,19 @@
+<mat-toolbar style="background-color: aqua;">
+  <div class="container">
+
+    <!-- Logo -->
+    <a routerLink="/" class="logo">
+      <img src="assets/logo.png" alt="FeedsHacker">
+    </a>
+
+    <!-- Navigation items -->
+    <a style="color: black;"
+      *ngFor="let navItem of navItems"
+      [routerLink]="navItem.link"
+      routerLinkActive="active"
+      mat-button>
+      {{ navItem.title }}
+    </a>
+
+  </div>
+</mat-toolbar>

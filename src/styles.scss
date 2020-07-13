@@ -1,0 +1,41 @@
+@import '~@angular/material/theming';
+@import 'theme';
+
+html, body {
+  min-height: 100%;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  padding: calc(3vh + 64px) 16px 3vh;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 800px;
+  width: 100%;
+}
+
+pre {
+  overflow-x: auto;
+}
+
+.content {
+  overflow-wrap: break-word;
+
+  *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@media(max-width: 599px) {
+
+  body {
+    padding: calc(2vh + 58px) 16px 2vh;
+  }
+}

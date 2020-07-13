@@ -1,0 +1,15 @@
+.container {
+  margin-top: 64px;
+
+  > * + * {
+    display: block;
+    margin-top: 1vh;
+  }
+}
+
+@media(max-width: 599px) {
+
+  .container {
+    margin-top: 56px;
+  }
+}
