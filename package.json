@@ -4,10 +4,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod",
+    "build": "ng serve",
     "test": "ng test",
     "lint": "ng lint",
-    "postinstall": "ng build --aot --prod",
     "e2e": "ng e2e"
   },
   "private": true,
