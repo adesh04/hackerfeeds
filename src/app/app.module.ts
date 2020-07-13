@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { ChartsModule } from 'ng2-charts';
 
 import { environment } from '../environments/environment';
 import { routes } from './routes';
@@ -57,6 +58,7 @@ import { PaginationComponent } from './components/pagination/pagination.componen
     MatButtonModule,
     MatCardModule,
     MatIconModule,
+    ChartsModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [

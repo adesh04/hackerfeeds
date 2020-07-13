@@ -5,3 +5,16 @@
 <div class="container">
   <app-feed-item *ngFor="let item of items$ | async" [item]="item"></app-feed-item>
 </div>
+<div class="container">
+  <div style="display: block;">
+    <canvas baseChart width="400" height="200"
+      [datasets]="lineChartData"
+      [labels]="lineChartLabels"
+      [options]="lineChartOptions"
+      [colors]="lineChartColors"
+      [legend]="lineChartLegend"
+      [chartType]="lineChartType"
+      [plugins]="lineChartPlugins">
+    </canvas>
+  </div>
+</div>
