@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+
+  hackerfeeds:
+    container_name: hackerfeeds
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/app'
+      - '/app/node_modules'
+    ports:
+      - '4200:4200'
