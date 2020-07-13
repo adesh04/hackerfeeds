@@ -13,3 +13,7 @@
 * *npm run start* (server will start on port 4200)
 * *open link : localhost:4200 in broweser* 
 
+**Steps & Comand to Run docker container in ubuntu:-**
+
+* *docker-compose up --build -d
+
