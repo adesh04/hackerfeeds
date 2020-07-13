@@ -30,8 +30,6 @@ export class AbstractBaseListComponent implements OnInit {
   };
   public lineChartColors: Color[] = [
     {
-      borderColor: 'black',
-      backgroundColor: 'rgba(255,0,0,0.3)',
     },
   ];
   public lineChartLegend = true;

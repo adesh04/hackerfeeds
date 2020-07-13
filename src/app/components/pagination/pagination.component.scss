@@ -1,36 +1,6 @@
 @import '~@angular/material/theming';
 
-:host {
-  @include mat-elevation(1);
-  align-items: center;
-  background-color: #fff;
-  color: rgba(0, 0, 0, 0.54);
-  display: flex;
-  font-size: 14px;
-  height: 56px;
-  justify-content: center;
-  left: 0;
-  position: fixed;
-  top: 56px;
-  width: 100%;
-  z-index: 100;
 
-  @media(min-width: 599px) {
-    height: 64px;
-    top: 64px;
-  }
-}
-
-span {
-  margin: 0 15px;
-}
-
-@media(max-width: 399px) {
-
-  span {
-    margin: 0 10px;
-  }
-}
 .previous{
   color: #ff6d00; ;
 }
