@@ -17,6 +17,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "chart.js"
+            ],
             "aot": true,
             "outputPath": "dist/hacker-feeds",
             "index": "src/index.html",
@@ -36,7 +39,9 @@
               },
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "../node_modules/chart.js/dist/Chart.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -107,8 +112,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["src/tsconfig.app.json", "src/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**"]
+            "tsConfig": [
+              "src/tsconfig.app.json",
+              "src/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         }
       }
