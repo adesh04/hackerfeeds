@@ -1,19 +1,25 @@
-<app-pagination (previous)="goToPage($event)" (next)="goToPage($event)" [currentPage]="currentPage"
-  [maxPages]="maxPages">
-</app-pagination>
 
 <div class="container">
+  <ul class="nav">
+    <li>Comments</li>
+    <li>Vote Count</li>
+    <li>UpVote</li>
+    <li>News Details</li>
+  </ul>
+</div>
+<div class="container" style="margin-top: 0px !important;">
   <app-feed-item *ngFor="let item of items$ | async" [item]="item"></app-feed-item>
+</div>
+<div>
+
+  <app-pagination (previous)="goToPage($event)" (next)="goToPage($event)" [currentPage]="currentPage"
+    [maxPages]="maxPages">
+  </app-pagination>
 </div>
 <div class="container">
   <div style="display: block;">
-    <canvas baseChart width="400" height="200"
-      [datasets]="lineChartData"
-      [labels]="lineChartLabels"
-      [options]="lineChartOptions"
-      [colors]="lineChartColors"
-      [legend]="lineChartLegend"
-      [chartType]="lineChartType"
+    <canvas baseChart width="400" height="200" [datasets]="lineChartData" [labels]="lineChartLabels"
+      [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType"
       [plugins]="lineChartPlugins">
     </canvas>
   </div>

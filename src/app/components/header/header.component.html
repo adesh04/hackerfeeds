@@ -9,7 +9,6 @@
     <!-- Navigation items -->
     <a style="color: black;"
       *ngFor="let navItem of navItems"
-      [routerLink]="navItem.link"
       routerLinkActive="active"
       mat-button>
       {{ navItem.title }}
