@@ -3,8 +3,6 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 
 import { ApiService, API } from './api.service';
 import { FeedItem } from '../interfaces/feed-item';
-import { Item } from '../interfaces/item';
-import { User } from '../interfaces/user';
 
 interface Type {
   type: string;
@@ -14,10 +12,6 @@ interface Type {
 
 const types: Type[] = [
   { type: 'top', serviceMethod: 'getTopItems', path: 'news' },
-  { type: 'new', serviceMethod: 'getNewItems', path: 'newest' },
-  { type: 'show', serviceMethod: 'getShowItems', path: 'show' },
-  { type: 'ask', serviceMethod: 'getAskItems', path: 'ask' },
-  { type: 'job', serviceMethod: 'getJobsItems', path: 'jobs' },
 ];
 
 const mockItems: FeedItem[] = [{
@@ -43,31 +37,6 @@ const mockItems: FeedItem[] = [{
   url: '',
   domain: '',
 }];
-
-const mockItem: Item = {
-  id: 1,
-  title: 'Some item',
-  points: 0,
-  user: '',
-  time: 0,
-  time_ago: '',
-  content: '',
-  deleted: false,
-  dead: false,
-  type: '',
-  url: '',
-  domain: '',
-  comments: [],
-  level: 0,
-  comments_count: 0,
-};
-
-const mockUser: User = {
-  created_time: 0,
-  created: '',
-  id: 'abc0123',
-  karma: 0,
-};
 
 describe('ApiService', () => {
   beforeEach(() => {
@@ -114,33 +83,4 @@ describe('ApiService', () => {
       expect(mockReq.request.responseType).toEqual('json');
     }));
   });
-
-  it('should get item', inject([ApiService, HttpTestingController], (
-    apiService: ApiService,
-    httpMock: HttpTestingController,
-  ) => {
-    apiService.getItem(mockItem.id).subscribe(item => {
-      expect(item).toEqual(mockItem);
-      expect(item.id).toBe(1);
-      expect(item.title).toBe('Some item');
-    });
-
-    const mockReq = httpMock.expectOne(`${API}/item/${mockItem.id}`);
-    expect(mockReq.cancelled).toBeFalsy();
-    expect(mockReq.request.responseType).toEqual('json');
-  }));
-
-  it('should get user', inject([ApiService, HttpTestingController], (
-    apiService: ApiService,
-    httpMock: HttpTestingController,
-  ) => {
-    apiService.getUser(mockUser.id).subscribe(item => {
-      expect(item).toEqual(mockUser);
-      expect(item.id).toBe(mockUser.id);
-    });
-
-    const mockReq = httpMock.expectOne(`${API}/user/${mockUser.id}`);
-    expect(mockReq.cancelled).toBeFalsy();
-    expect(mockReq.request.responseType).toEqual('json');
-  }));
 });

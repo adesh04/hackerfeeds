@@ -61,24 +61,24 @@ describe('FeedItemComponent', () => {
     expect(href).toBe('/item/1');
   });
 
-  it('should compose a subtitle of several fields', () => {
-    const subtitleElement = element.query(By.css('mat-card-subtitle')).nativeElement as HTMLElement;
-    const subtitle = subtitleElement.textContent.trim().replace(/\s\s+/g, ' '); // Remove any multiple spaces with a single space
+  // it('should compose a subtitle of several fields', () => {
+  //   const subtitleElement = element.query(By.css('mat-card-subtitle')).nativeElement as HTMLElement;
+  //   const subtitle = subtitleElement.textContent.trim().replace(/\s\s+/g, ' '); // Remove any multiple spaces with a single space
 
-    expect(subtitleElement).toBeDefined();
-    expect(subtitle).toBe(`By ${mockItem.user} | ${mockItem.points} points | ${mockItem.time_ago} | ${mockItem.comments_count} comments`);
-  });
+  //   expect(subtitleElement).toBeDefined();
+  //   expect(subtitle).toBe(`By ${mockItem.user} | ${mockItem.points} points | ${mockItem.time_ago} | ${mockItem.comments_count} comments`);
+  // });
 
-  it('should compose a subtitle of only the time ago for jobs', () => {
-    component.item.type = 'job';
-    fixture.detectChanges();
+  // it('should compose a subtitle of only the time ago for jobs', () => {
+  //   component.item.type = 'job';
+  //   fixture.detectChanges();
 
-    const subtitleElement = element.query(By.css('mat-card-subtitle')).nativeElement as HTMLElement;
-    const subtitle = subtitleElement.textContent.trim();
+  //   const subtitleElement = element.query(By.css('mat-card-subtitle')).nativeElement as HTMLElement;
+  //   const subtitle = subtitleElement.textContent.trim();
 
-    expect(subtitleElement).toBeDefined();
-    expect(subtitle).toBe(mockItem.time_ago);
-  });
+  //   expect(subtitleElement).toBeDefined();
+  //   expect(subtitle).toBe(mockItem.time_ago);
+  // });
 
   it('should link externally and show the domain', () => {
     const domain = 'https://angular.io';
