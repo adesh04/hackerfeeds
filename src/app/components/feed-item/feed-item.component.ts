@@ -13,4 +13,12 @@ export class FeedItemComponent {
   dateFormat = Config.dateFormat;
   commentsMapping = Config.commentsMapping;
   pointsMapping = Config.pointsMapping;
+  public isHidden: any = true;
+
+  public hideDiv() {
+    this.isHidden = false;
+  }
+  public upVote() {
+    this.item.points++;
+  }
 }
