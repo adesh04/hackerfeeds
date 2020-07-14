@@ -67,4 +67,24 @@ export class AbstractBaseListComponent implements OnInit {
   goToPage(page: number) {
     this.router.navigate([this.routeName, page]);
   }
+
+  public async onUpdate(event) {
+    const index = this.lineChartData[0].data.indexOf(event.point.points);
+    if (index > -1) {
+      this.lineChartData[0].data[index] = event.point.points + 1;
+    }
+
+  }
+
+  public async onHide(event) {
+    const index = this.lineChartData[0].data.indexOf(event.point.points);
+    if (index > -1) {
+      this.lineChartData[0].data.splice(index, 1);
+    }
+    const indexXAxis = this.lineChartLabels.indexOf(event.point.id);
+    if (indexXAxis > -1) {
+      this.lineChartLabels.splice(indexXAxis, 1);
+    }
+
+  }
 }

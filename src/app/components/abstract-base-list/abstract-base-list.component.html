@@ -7,7 +7,7 @@
   </ul>
 </div>
 <div class="container" style="margin-top: 0px !important;">
-  <app-feed-item *ngFor="let item of items$ | async" [item]="item"></app-feed-item>
+  <app-feed-item *ngFor="let item of items$ | async" [item]="item" (dispatchUpdate)="onUpdate($event)" (dispatchHide)="onHide($event)"></app-feed-item>
   <div class="pagination">
 
     <app-pagination (previous)="goToPage($event)" (next)="goToPage($event)" [currentPage]="currentPage" style="float: right;"
