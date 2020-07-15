@@ -69,6 +69,12 @@ export class AbstractBaseListComponent implements OnInit {
   }
 
   public async onUpdate(event) {
+    this.items$.subscribe(data => {
+      data.forEach(element => {
+        this.lineChartData[0].data.push(element.points);
+        this.lineChartLabels.push(element.id);
+      });
+    });
     const index = this.lineChartData[0].data.indexOf(event.point.points);
     if (index > -1) {
       this.lineChartData[0].data[index] = event.point.points + 1;
@@ -77,6 +83,12 @@ export class AbstractBaseListComponent implements OnInit {
   }
 
   public async onHide(event) {
+    this.items$.subscribe(data => {
+      data.forEach(element => {
+        this.lineChartData[0].data.push(element.points);
+        this.lineChartLabels.push(element.id);
+      });
+    });
     const index = this.lineChartData[0].data.indexOf(event.point.points);
     if (index > -1) {
       this.lineChartData[0].data.splice(index, 1);
